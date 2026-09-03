@@ -1,0 +1,32 @@
+{
+  "name": "@wenlock/frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.0",
+    "lucide-react": "^0.577.0",
+    "validator": "^13.15.35"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/validator": "^13.15.10",
+    "@vitejs/plugin-react": "^5.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.0",
+    "jsdom": "^28.0.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/jest-dom": "^6.9.0",
+    "@testing-library/user-event": "^14.6.0"
+  }
+}

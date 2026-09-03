@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+!.env.example
+playwright-report/
+test-results/
+.local/
+.superpowers/
+.worktrees/
+/docs/superpowers/
+/docs/presentation.md
+*.log
+*.tsbuildinfo

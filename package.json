@@ -1,0 +1,34 @@
+{
+  "name": "wenlock-users",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces",
+    "test:api": "npm run test:integration -w backend",
+    "test:e2e": "playwright test",
+    "test:e2e:docker": "playwright test --config playwright.docker.config.ts",
+    "docker:up": "docker compose up -d --build --wait",
+    "docker:stop": "docker compose stop",
+    "docker:seed": "docker compose exec api node dist/database/seed.js",
+    "typecheck": "npm run typecheck --workspaces",
+    "db:up": "docker compose up -d --wait db",
+    "db:migrate": "npm run migration:run -w backend",
+    "db:seed": "npm run seed -w backend",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "concurrently": "^9.2.1",
+    "prettier": "^3.8.1"
+  }
+}
